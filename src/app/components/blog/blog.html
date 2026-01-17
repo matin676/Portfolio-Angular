@@ -1,0 +1,100 @@
+<div
+  class="section-padding bg-background-light dark:bg-background-dark transition-colors duration-300"
+>
+  <div class="container-width">
+    <!-- Header -->
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2
+        class="text-4xl sm:text-5xl font-extrabold font-heading text-text-heading-light dark:text-text-heading-dark mb-6 transition-colors duration-300"
+      >
+        Latest <span class="gradient-text">Articles</span>
+      </h2>
+      <p
+        class="text-lg text-text-body-light dark:text-text-body-dark max-w-2xl mx-auto transition-colors duration-300"
+      >
+        Insights, tutorials, and thoughts on technology and development.
+      </p>
+    </div>
+
+    @if (posts$ | async; as posts) {
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        @for (post of posts; track post.link) {
+          <a
+            [href]="post.link"
+            target="_blank"
+            class="card-base group overflow-hidden hover:shadow-2xl hover:border-primary/30 dark:hover:border-primary/30 transition-all duration-300 h-full flex flex-col"
+            data-aos="fade-up"
+            [attr.data-aos-delay]="100 * $index"
+          >
+            <!-- Image -->
+            <div class="relative h-48 overflow-hidden">
+              <img
+                [src]="post.thumbnail"
+                [alt]="post.title"
+                class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-linear-to-t from-black/60 to-transparent"></div>
+              <div
+                class="absolute bottom-3 left-4 text-white text-xs font-semibold bg-primary/90 px-2 py-1 rounded"
+              >
+                {{ post.publishedDate | date: 'mediumDate' }}
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="p-6 flex flex-col grow">
+              <h3
+                class="text-xl font-bold text-text-heading-light dark:text-text-heading-dark mb-3 group-hover:text-primary transition-colors line-clamp-2"
+              >
+                {{ post.title }}
+              </h3>
+              <p
+                class="text-text-body-light dark:text-text-body-dark text-sm leading-relaxed mb-4 line-clamp-3"
+              >
+                {{ post.summary }}
+              </p>
+
+              <div
+                class="mt-auto flex items-center text-primary font-semibold text-sm group-hover:underline"
+              >
+                Read More
+                <span
+                  class="material-symbols-outlined text-base ml-1 transition-transform group-hover:translate-x-1"
+                  >arrow_forward</span
+                >
+              </div>
+            </div>
+          </a>
+        }
+      </div>
+    } @else {
+      <!-- Loading Skeletons -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        @for (i of [1, 2, 3]; track i) {
+          <div class="card-base h-full flex flex-col">
+            <app-skeleton height="12rem" borderRadius="0"></app-skeleton>
+            <div class="p-6 space-y-4 grow">
+              <app-skeleton height="1.75rem" width="80%"></app-skeleton>
+              <div class="space-y-2">
+                <app-skeleton height="1rem" width="100%"></app-skeleton>
+                <app-skeleton height="1rem" width="90%"></app-skeleton>
+                <app-skeleton height="1rem" width="60%"></app-skeleton>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    }
+
+    <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="400">
+      <a
+        href="https://techtalesdev.blogspot.com/"
+        target="_blank"
+        class="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-xl font-bold hover:bg-primary-dark transition-all hover:scale-105 shadow-lg shadow-primary/25"
+      >
+        View All Posts
+        <span class="material-symbols-outlined">open_in_new</span>
+      </a>
+    </div>
+  </div>
+</div>

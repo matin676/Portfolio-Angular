@@ -1,0 +1,169 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import 'tailwindcss';
+@variant dark (&:where(.dark, .dark *));
+@import 'aos/dist/aos.css';
+
+@theme {
+  /* Brand Colors */
+  --color-primary: #3b82f6; /* Blue 500 */
+  --color-primary-dark: #2563eb; /* Blue 600 */
+  --color-primary-light: #60a5fa; /* Blue 400 */
+
+  --color-accent: #8b5cf6; /* Violet 500 */
+  --color-accent-dark: #7c3aed; /* Violet 600 */
+  --color-accent-light: #a78bfa; /* Violet 400 */
+
+  /* Backgrounds */
+  --color-background-light: #f8fafc; /* Slate 50 */
+  --color-background-dark: #0f172a; /* Slate 900 */
+
+  --color-surface-light: #ffffff; /* White */
+  --color-surface-dark: #1e293b; /* Slate 800 */
+
+  --color-surface-highlight-light: #f1f5f9; /* Slate 100 */
+  --color-surface-highlight-dark: #334155; /* Slate 700 */
+
+  /* Text */
+  --color-text-heading-light: #0f172a; /* Slate 900 */
+  --color-text-heading-dark: #f8fafc; /* Slate 50 */
+
+  --color-text-body-light: #475569; /* Slate 600 */
+  --color-text-body-dark: #cbd5e1; /* Slate 300 */
+
+  --color-text-muted-light: #94a3b8; /* Slate 400 */
+  --color-text-muted-dark: #64748b; /* Slate 500 */
+
+  /* Borders */
+  --color-border-light: #e2e8f0; /* Slate 200 */
+  --color-border-dark: #1e293b; /* Slate 800 */
+  --color-border-hover-light: #cbd5e1; /* Slate 300 */
+  --color-border-hover-dark: #334155; /* Slate 700 */
+
+  /* Typography */
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+
+  /* Radius */
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-3xl: 32px;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-display);
+  color: var(--color-text-body-light);
+  background-color: var(--color-background-light);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+
+.dark body {
+  color: var(--color-text-body-dark);
+  background-color: var(--color-background-dark);
+}
+
+/* Custom Utilities for Consistency */
+.section-padding {
+  padding-top: 9rem;
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 640px) {
+  .section-padding {
+    padding-top: 10rem;
+    padding-bottom: 6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-top: 12rem;
+    padding-bottom: 8rem;
+  }
+}
+
+.container-width {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.card-base {
+  @apply bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-2xl sm:rounded-3xl;
+}
+
+.gradient-text {
+  @apply text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent;
+}
+
+/* Contact Page Utilities */
+.blueprint-bg {
+  background-image: linear-gradient(rgba(11, 95, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to right, rgba(11, 95, 255, 0.03) 1px, transparent 1px);
+  background-size: 2.5rem 2.5rem;
+}
+
+.dark .blueprint-bg {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+.material-shadow {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.dark .material-shadow {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+/* Print Styles */
+@media print {
+  /* Hide non-essential elements */
+  app-header,
+  app-footer,
+  app-scroll-top,
+  .no-print {
+    display: none !important;
+  }
+
+  /* Reset layout for paper */
+  body {
+    background-color: white !important;
+    color: black !important;
+    font-size: 12pt;
+  }
+
+  .section-padding {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  /* Ensure backgrounds print */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Ensure links are readable */
+  a {
+    text-decoration: none !important;
+    color: black !important;
+  }
+
+  /* Page breaks */
+  h1,
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+
+  .card-base {
+    break-inside: avoid;
+    border: 1px solid #ddd !important;
+    box-shadow: none !important;
+  }
+}

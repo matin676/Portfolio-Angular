@@ -1,0 +1,81 @@
+<div
+  class="section-padding bg-background-light dark:bg-background-dark transition-colors duration-300"
+>
+  <div class="container-width">
+    <!-- Header -->
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2
+        class="text-4xl sm:text-5xl font-extrabold font-heading text-text-heading-light dark:text-text-heading-dark mb-6 transition-colors duration-300"
+      >
+        Featured <span class="gradient-text">Projects</span>
+      </h2>
+      <p
+        class="text-lg text-text-body-light dark:text-text-body-dark max-w-2xl mx-auto transition-colors duration-300"
+      >
+        A selection of my recent work, showing my expertise in full-stack development.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      @for (project of projects; track project.title) {
+        <div
+          class="card-base group relative overflow-hidden hover:shadow-2xl hover:border-primary/30 dark:hover:border-primary/30 transition-all duration-500"
+          data-aos="fade-up"
+          [attr.data-aos-delay]="100 * $index"
+        >
+          <div class="p-8 h-full flex flex-col">
+            <div class="flex items-center justify-between mb-6">
+              <div
+                class="size-12 rounded-2xl flex items-center justify-center text-white shadow-lg bg-blue-600"
+                [class]="project.style.iconBg"
+              >
+                <span class="material-symbols-outlined text-2xl">{{ project.icon }}</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <a
+                  [href]="project.links.github"
+                  target="_blank"
+                  class="size-10 rounded-full bg-surface-light dark:bg-surface-dark flex items-center justify-center text-text-muted-light dark:text-text-muted-dark hover:text-primary hover:scale-110 transition-all border border-border-light dark:border-border-dark"
+                  title="View Code"
+                >
+                  <span class="material-symbols-outlined text-xl">code</span>
+                </a>
+                <a
+                  [href]="project.links.demo"
+                  target="_blank"
+                  class="size-10 rounded-full flex items-center justify-center text-white hover:scale-110 transition-all shadow-lg"
+                  [class]="project.style.buttonBg"
+                  title="Live Demo"
+                >
+                  <span class="material-symbols-outlined text-xl">open_in_new</span>
+                </a>
+              </div>
+            </div>
+
+            <h3
+              class="text-2xl font-bold text-text-heading-light dark:text-text-heading-dark mb-3 transition-colors"
+              [class]="project.style.titleHover"
+            >
+              {{ project.title }}
+            </h3>
+
+            <p class="text-text-body-light dark:text-text-body-dark leading-relaxed mb-6 grow">
+              {{ project.description }}
+            </p>
+
+            <div class="flex flex-wrap gap-2 mt-auto">
+              @for (tag of project.tags; track tag) {
+                <span
+                  class="px-3 py-1 rounded-lg bg-surface-highlight-light dark:bg-surface-highlight-dark text-xs font-semibold border border-border-light dark:border-border-dark"
+                  [class]="project.style.text"
+                >
+                  {{ tag }}
+                </span>
+              }
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>

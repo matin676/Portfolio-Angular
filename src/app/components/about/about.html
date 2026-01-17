@@ -1,0 +1,296 @@
+<div
+  class="section-padding bg-background-light dark:bg-background-dark min-h-screen transition-colors duration-300"
+>
+  <div class="container-width">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+      <!-- Left Column: Content -->
+      <div class="lg:col-span-8 flex flex-col gap-12">
+        <!-- Bio Section -->
+        <div class="flex flex-col gap-6" data-aos="fade-up">
+          <div class="flex flex-col gap-5">
+            <!-- Badge -->
+            <div
+              class="inline-flex w-fit items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800/50"
+            >
+              <span class="relative flex h-2.5 w-2.5">
+                <span
+                  class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-75"
+                ></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-600"></span>
+              </span>
+              <span
+                class="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest font-sans"
+                >Available for hire</span
+              >
+            </div>
+
+            <!-- Headline -->
+            <h1
+              class="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-heading text-text-heading-light dark:text-text-heading-dark leading-tight tracking-tight transition-colors duration-300"
+            >
+              Crafting Digital <br />
+              <span class="text-primary">Experiences</span><span class="text-emerald-500">.</span>
+            </h1>
+
+            <!-- Bio Text -->
+            <p
+              class="text-lg text-text-body-light dark:text-text-body-dark leading-relaxed max-w-3xl font-normal transition-colors duration-300"
+            >
+              I'm
+              <strong class="text-text-heading-light dark:text-text-heading-dark font-bold"
+                >Matin Imam</strong
+              >, a Full Stack Developer transforming ideas into accessible, pixel-perfect web
+              solutions. Currently architecting scalable systems at
+              <strong class="text-primary dark:text-primary-light font-bold"
+                >Tata Consultancy Services</strong
+              >.
+            </p>
+          </div>
+
+          <!-- Buttons -->
+          <div class="flex flex-wrap gap-4 mt-2">
+            <button
+              routerLink="/projects"
+              class="flex items-center justify-center h-12 px-6 rounded-lg bg-primary text-white text-sm font-bold shadow-lg shadow-primary/20 hover:bg-primary-dark hover:-translate-y-0.5 transition-all duration-300"
+            >
+              View Projects
+              <span class="material-symbols-outlined ml-2 text-lg">arrow_forward</span>
+            </button>
+            <a
+              href="https://drive.google.com/file/d/1_MxMyGZSSBf-LtHYr1bDAdjGEpxCKv4J/view?usp=sharing"
+              target="_blank"
+              class="flex items-center justify-center h-12 px-6 rounded-lg bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark text-text-body-light dark:text-text-heading-dark text-sm font-bold shadow-sm hover:shadow-md hover:bg-surface-highlight-light dark:hover:bg-surface-highlight-dark hover:-translate-y-0.5 transition-all duration-300"
+            >
+              <span class="material-symbols-outlined mr-2 text-lg">download</span>
+              Resume
+            </a>
+          </div>
+        </div>
+
+        <!-- Technical Arsenal Header -->
+        <div class="flex items-center gap-4 mt-4">
+          <h2
+            class="text-2xl font-bold font-heading text-text-heading-light dark:text-text-heading-dark"
+          >
+            Technical Arsenal
+          </h2>
+          <div class="h-px flex-1 bg-border-light dark:bg-border-dark"></div>
+        </div>
+
+        <!-- Technical Arsenal Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6" data-aos="fade-up" data-aos-delay="200">
+          <!-- Backend Card -->
+          <div
+            class="card-base p-6 hover:shadow-lg hover:border-primary/30 dark:hover:border-primary/30 transition-all duration-300 group relative overflow-hidden"
+          >
+            <div
+              class="absolute top-4 right-4 p-2 bg-blue-50 dark:bg-blue-900/20 rounded-lg text-blue-600 dark:text-blue-400 group-hover:bg-blue-100 dark:group-hover:bg-blue-900/40 transition-colors"
+            >
+              <span class="material-symbols-outlined text-2xl">dns</span>
+            </div>
+            <h3
+              class="text-lg font-bold font-heading text-text-heading-light dark:text-text-heading-dark mb-4 mt-2 group-hover:text-primary transition-colors"
+            >
+              Backend
+            </h3>
+            <ul class="space-y-3">
+              <li
+                class="flex items-center gap-2 text-sm text-text-body-light dark:text-text-body-dark"
+              >
+                <span class="size-1.5 rounded-full bg-primary"></span> Java & Spring Boot
+              </li>
+              <li
+                class="flex items-center gap-2 text-sm text-text-body-light dark:text-text-body-dark"
+              >
+                <span class="size-1.5 rounded-full bg-primary"></span> PostgreSQL & MySQL
+              </li>
+              <li
+                class="flex items-center gap-2 text-sm text-text-body-light dark:text-text-body-dark"
+              >
+                <span class="size-1.5 rounded-full bg-primary"></span> RESTful APIs
+              </li>
+            </ul>
+          </div>
+
+          <!-- Frontend Card -->
+          <div
+            class="card-base p-6 hover:shadow-lg hover:border-emerald-500/30 dark:hover:border-emerald-500/30 transition-all duration-300 group relative overflow-hidden"
+          >
+            <div
+              class="absolute top-4 right-4 p-2 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg text-emerald-600 dark:text-emerald-400 group-hover:bg-emerald-100 dark:group-hover:bg-emerald-900/40 transition-colors"
+            >
+              <span class="material-symbols-outlined text-2xl">code</span>
+            </div>
+            <h3
+              class="text-lg font-bold font-heading text-text-heading-light dark:text-text-heading-dark mb-4 mt-2 group-hover:text-emerald-500 transition-colors"
+            >
+              Frontend
+            </h3>
+            <ul class="space-y-3">
+              <li
+                class="flex items-center gap-2 text-sm text-text-body-light dark:text-text-body-dark"
+              >
+                <span class="size-1.5 rounded-full bg-emerald-500"></span> Angular & React
+              </li>
+              <li
+                class="flex items-center gap-2 text-sm text-text-body-light dark:text-text-body-dark"
+              >
+                <span class="size-1.5 rounded-full bg-emerald-500"></span> TypeScript & JavaScript
+              </li>
+              <li
+                class="flex items-center gap-2 text-sm text-text-body-light dark:text-text-body-dark"
+              >
+                <span class="size-1.5 rounded-full bg-emerald-500"></span> Tailwind CSS
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Profile -->
+      <div class="lg:col-span-4 lg:sticky lg:top-24 h-fit" data-aos="fade-left">
+        <div class="card-base p-2 shadow-2xl shadow-primary/10 transition-colors duration-300">
+          <div class="relative overflow-hidden rounded-3xl aspect-4/5 mb-6 group">
+            <img
+              ngSrc="/mi-art.png"
+              alt="Matin Imam Art"
+              fill
+              class="object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div
+              class="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-surface-dark/40 backdrop-blur-md border border-white/10 text-white shadow-lg"
+            >
+              <div class="flex items-center gap-3">
+                <div
+                  class="size-10 flex items-center justify-center rounded-full bg-primary text-white shrink-0 shadow-lg shadow-primary/25"
+                >
+                  <span class="material-symbols-outlined text-xl">location_on</span>
+                </div>
+                <div>
+                  <div class="text-xs font-medium text-blue-100">Based in</div>
+                  <div class="font-bold">Gujarat, India</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="px-4 pb-6 space-y-6">
+            <!-- Brief Stats -->
+            <div class="grid grid-cols-1 gap-4">
+              <div
+                class="flex items-center gap-4 p-4 rounded-2xl bg-surface-highlight-light dark:bg-surface-highlight-dark transition-colors duration-300"
+              >
+                <span
+                  class="material-symbols-outlined text-3xl text-primary dark:text-primary-light"
+                  >workspace_premium</span
+                >
+                <div>
+                  <div
+                    class="text-2xl font-bold text-text-heading-light dark:text-text-heading-dark"
+                  >
+                    Early Career
+                  </div>
+                  <div
+                    class="text-xs font-semibold text-text-muted-light dark:text-text-muted-dark uppercase tracking-wide"
+                  >
+                    Experience
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex items-center gap-4 p-4 rounded-2xl bg-surface-highlight-light dark:bg-surface-highlight-dark transition-colors duration-300"
+              >
+                <span
+                  class="material-symbols-outlined text-3xl text-emerald-600 dark:text-emerald-400"
+                  >badge</span
+                >
+                <div>
+                  <div
+                    class="text-xl font-bold text-text-heading-light dark:text-text-heading-dark"
+                  >
+                    Software Developer
+                  </div>
+                  <div
+                    class="text-xs font-semibold text-text-muted-light dark:text-text-muted-dark uppercase tracking-wide"
+                  >
+                    Current Role
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex items-center gap-4 p-4 rounded-2xl bg-surface-highlight-light dark:bg-surface-highlight-dark transition-colors duration-300"
+              >
+                <span class="material-symbols-outlined text-3xl text-accent dark:text-accent-light"
+                  >domain</span
+                >
+                <div>
+                  <div
+                    class="text-xl font-bold text-text-heading-light dark:text-text-heading-dark"
+                  >
+                    TCS
+                  </div>
+                  <div
+                    class="text-xs font-semibold text-text-muted-light dark:text-text-muted-dark uppercase tracking-wide"
+                  >
+                    Company
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex items-center gap-4 p-4 rounded-2xl bg-surface-highlight-light dark:bg-surface-highlight-dark transition-colors duration-300"
+              >
+                <span
+                  class="material-symbols-outlined text-3xl text-orange-600 dark:text-orange-400"
+                  >mail</span
+                >
+                <div class="overflow-hidden">
+                  <div
+                    class="text-sm font-bold text-text-heading-light dark:text-text-heading-dark truncate"
+                    title="matinimam77@gmail.com"
+                  >
+                    matinimam77@gmail.com
+                  </div>
+                  <div
+                    class="text-xs font-semibold text-text-muted-light dark:text-text-muted-dark uppercase tracking-wide"
+                  >
+                    Email
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="h-px bg-border-light dark:bg-border-dark my-6"></div>
+
+            <!-- Socials -->
+            <div class="flex justify-center gap-6">
+              <a
+                href="https://www.linkedin.com/in/matin-imam"
+                target="_blank"
+                class="text-text-muted-light dark:text-text-muted-dark hover:text-[#0A66C2] transition-colors"
+              >
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://github.com/matin676"
+                target="_blank"
+                class="text-text-muted-light dark:text-text-muted-dark hover:text-text-heading-light dark:hover:text-white transition-colors"
+              >
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    fill-rule="evenodd"
+                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

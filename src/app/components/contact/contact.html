@@ -1,0 +1,245 @@
+<div
+  class="section-padding bg-background-light dark:bg-background-dark transition-colors duration-300"
+>
+  <div class="container-width">
+    <div class="card-base flex flex-col lg:flex-row min-h-[600px] overflow-hidden">
+      <!-- Contact Info Sidebar -->
+      <div
+        data-aos="fade-up"
+        class="relative w-full lg:w-2/5 bg-surface-highlight-light dark:bg-surface-dark text-text-heading-light dark:text-text-heading-dark p-8 lg:p-12 overflow-hidden flex flex-col justify-between border-r border-border-light dark:border-border-dark"
+      >
+        <div class="absolute top-0 right-0 p-12 opacity-5 dark:opacity-10 transition-opacity">
+          <span
+            class="material-symbols-outlined text-[200px] leading-none text-text-muted-light dark:text-white"
+            >send</span
+          >
+        </div>
+        <!-- Gradient Blobs -->
+        <div
+          class="absolute top-[-20%] right-[-10%] w-64 h-64 bg-primary/20 dark:bg-primary/40 rounded-full blur-3xl transition-colors"
+        ></div>
+        <div
+          class="absolute bottom-[-10%] left-[-10%] w-64 h-64 bg-accent/20 dark:bg-accent/30 rounded-full blur-3xl transition-colors"
+        ></div>
+
+        <div class="relative z-10">
+          <h2 class="text-3xl lg:text-4xl font-bold font-heading mb-4">Let's Connect</h2>
+          <p class="text-text-body-light dark:text-text-body-dark text-lg leading-relaxed">
+            Ready to start your next project? I'm interested in freelance opportunities and
+            ambitious collaborations.
+          </p>
+        </div>
+
+        <div class="relative z-10 flex flex-col gap-8 my-12">
+          <!-- Contact Item -->
+          <div class="flex items-start gap-5">
+            <div
+              class="shrink-0 size-12 rounded-2xl bg-white dark:bg-white/10 shadow-sm border border-border-light dark:border-transparent flex items-center justify-center text-primary dark:text-primary-light"
+            >
+              <span class="material-symbols-outlined text-2xl">mail</span>
+            </div>
+            <div>
+              <h3
+                class="text-lg font-bold text-text-heading-light dark:text-text-heading-dark mb-1"
+              >
+                Email
+              </h3>
+              <a
+                href="mailto:matinimam77@gmail.com"
+                class="text-text-body-light dark:text-text-body-dark hover:text-primary dark:hover:text-primary-light transition-colors"
+              >
+                matinimam77@gmail.com
+              </a>
+            </div>
+          </div>
+
+          <!-- Contact Item -->
+          <div class="flex items-start gap-5">
+            <div
+              class="shrink-0 size-12 rounded-2xl bg-white dark:bg-white/10 shadow-sm border border-border-light dark:border-transparent flex items-center justify-center text-primary dark:text-primary-light"
+            >
+              <span class="material-symbols-outlined text-2xl">call</span>
+            </div>
+            <div>
+              <h3
+                class="text-lg font-bold text-text-heading-light dark:text-text-heading-dark mb-1"
+              >
+                Phone
+              </h3>
+              <a
+                href="tel:+918141148260"
+                class="text-text-body-light dark:text-text-body-dark hover:text-primary dark:hover:text-primary-light transition-colors"
+              >
+                +91 814-114-8260
+              </a>
+            </div>
+          </div>
+
+          <!-- Contact Item -->
+          <div class="flex items-start gap-5">
+            <div
+              class="shrink-0 size-12 rounded-2xl bg-white dark:bg-white/10 shadow-sm border border-border-light dark:border-transparent flex items-center justify-center text-primary dark:text-primary-light"
+            >
+              <span class="material-symbols-outlined text-2xl">location_on</span>
+            </div>
+            <div>
+              <h3
+                class="text-lg font-bold text-text-heading-light dark:text-text-heading-dark mb-1"
+              >
+                Location
+              </h3>
+              <p class="text-text-body-light dark:text-text-body-dark">Gujarat, India</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative z-10">
+          <p
+            class="text-sm text-text-muted-light dark:text-text-muted-dark uppercase tracking-wider font-semibold mb-4"
+          >
+            Socials
+          </p>
+          <div class="flex gap-4">
+            <a
+              href="https://github.com/matin676"
+              target="_blank"
+              class="size-10 rounded-full bg-white dark:bg-white/10 shadow-sm border border-border-light dark:border-transparent flex items-center justify-center hover:scale-110 hover:border-primary/50 dark:hover:bg-white dark:hover:text-surface-dark text-text-heading-light dark:text-white transition-all duration-300 group"
+            >
+              <i
+                class="devicon-github-original text-xl group-hover:text-primary dark:group-hover:text-surface-dark transition-colors"
+              ></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/matin-imam-58600325b/"
+              target="_blank"
+              class="size-10 rounded-full bg-white dark:bg-white/10 shadow-sm border border-border-light dark:border-transparent flex items-center justify-center hover:scale-110 hover:border-primary/50 dark:hover:bg-white dark:hover:text-surface-dark text-text-heading-light dark:text-white transition-all duration-300 group"
+            >
+              <i
+                class="devicon-linkedin-plain text-xl group-hover:text-blue-600 dark:group-hover:text-blue-600 transition-colors"
+              ></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div
+        class="w-full lg:w-3/5 p-8 lg:p-12 bg-surface-light dark:bg-surface-dark relative"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <label
+                for="name"
+                class="text-sm font-bold text-text-body-light dark:text-text-body-dark uppercase tracking-wide"
+                >Name</label
+              >
+              <input
+                type="text"
+                id="name"
+                formControlName="name"
+                placeholder="John Doe"
+                [class.border-red-500]="
+                  contactForm.get('name')?.invalid && contactForm.get('name')?.touched
+                "
+                class="w-full px-4 py-3 rounded-lg bg-surface-highlight-light dark:bg-surface-highlight-dark border-2 border-border-light dark:border-border-dark focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/10 transition-all font-medium text-text-heading-light dark:text-text-heading-dark placeholder:text-text-muted-light dark:placeholder:text-text-muted-dark"
+              />
+            </div>
+            <div class="space-y-2">
+              <label
+                for="email"
+                class="text-sm font-bold text-text-body-light dark:text-text-body-dark uppercase tracking-wide"
+                >Email</label
+              >
+              <input
+                type="email"
+                id="email"
+                formControlName="email"
+                placeholder="john@example.com"
+                [class.border-red-500]="
+                  contactForm.get('email')?.invalid && contactForm.get('email')?.touched
+                "
+                class="w-full px-4 py-3 rounded-lg bg-surface-highlight-light dark:bg-surface-highlight-dark border-2 border-border-light dark:border-border-dark focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/10 transition-all font-medium text-text-heading-light dark:text-text-heading-dark placeholder:text-text-muted-light dark:placeholder:text-text-muted-dark"
+              />
+            </div>
+          </div>
+
+          <div class="space-y-2">
+            <label
+              for="subject"
+              class="text-sm font-bold text-text-body-light dark:text-text-body-dark uppercase tracking-wide"
+              >Subject</label
+            >
+            <input
+              type="text"
+              id="subject"
+              formControlName="subject"
+              placeholder="Project Inquiry"
+              [class.border-red-500]="
+                contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched
+              "
+              class="w-full px-4 py-3 rounded-lg bg-surface-highlight-light dark:bg-surface-highlight-dark border-2 border-border-light dark:border-border-dark focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/10 transition-all font-medium text-text-heading-light dark:text-text-heading-dark placeholder:text-text-muted-light dark:placeholder:text-text-muted-dark"
+            />
+          </div>
+
+          <div class="space-y-2">
+            <label
+              for="message"
+              class="text-sm font-bold text-text-body-light dark:text-text-body-dark uppercase tracking-wide"
+              >Message</label
+            >
+            <textarea
+              id="message"
+              formControlName="message"
+              rows="5"
+              placeholder="Tell me about your project..."
+              [class.border-red-500]="
+                contactForm.get('message')?.invalid && contactForm.get('message')?.touched
+              "
+              class="w-full px-4 py-3 rounded-lg bg-surface-highlight-light dark:bg-surface-highlight-dark border-2 border-border-light dark:border-border-dark focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/10 transition-all font-medium text-text-heading-light dark:text-text-heading-dark placeholder:text-text-muted-light dark:placeholder:text-text-muted-dark resize-none"
+            ></textarea>
+          </div>
+
+          @if (isSuccess()) {
+            <div
+              class="p-4 rounded-lg bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 text-sm font-bold animate-in fade-in"
+            >
+              Message sent successfully! I'll get back to you soon.
+            </div>
+          }
+
+          @if (errorMessage()) {
+            <div
+              class="p-4 rounded-lg bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-400 text-sm font-bold animate-in fade-in"
+            >
+              {{ errorMessage() }}
+            </div>
+          }
+
+          <div class="pt-4">
+            <button
+              type="submit"
+              [disabled]="isSubmitting()"
+              class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-primary text-white font-bold shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 hover:-translate-y-1 active:translate-y-0 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
+            >
+              @if (!isSubmitting()) {
+                <span>Send Message</span>
+              }
+              @if (isSubmitting()) {
+                <span>Sending...</span>
+              }
+              @if (!isSubmitting()) {
+                <span class="material-symbols-outlined">send</span>
+              }
+              @if (isSubmitting()) {
+                <span class="material-symbols-outlined animate-spin">progress_activity</span>
+              }
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

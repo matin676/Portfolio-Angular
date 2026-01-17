@@ -1,0 +1,145 @@
+<div
+  class="section-padding bg-background-light dark:bg-background-dark overflow-hidden transition-colors duration-300"
+>
+  <div class="container-width">
+    <!-- Header Section -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
+      <div class="space-y-4 max-w-2xl">
+        <div
+          class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 text-xs font-bold tracking-widest uppercase border border-blue-100 dark:border-blue-800 transition-colors duration-300"
+        >
+          <span class="size-2 rounded-full bg-blue-600 dark:bg-blue-400"></span>
+          Career Timeline
+        </div>
+        <div>
+          <h2
+            class="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-heading text-text-heading-light dark:text-text-heading-dark tracking-tight mb-4 transition-colors duration-300"
+          >
+            Professional <span class="gradient-text">Experience</span>
+          </h2>
+          <p
+            class="text-lg text-text-body-light dark:text-text-body-dark leading-relaxed transition-colors duration-300"
+          >
+            A chronicle of my journey in software engineering, building scalable microservices and
+            intuitive frontends for enterprise solutions.
+          </p>
+        </div>
+      </div>
+
+      <a
+        href="https://drive.google.com/file/d/1_MxMyGZSSBf-LtHYr1bDAdjGEpxCKv4J/view?usp=sharing"
+        target="_blank"
+        class="group inline-flex items-center gap-2 text-primary font-bold hover:text-primary-dark dark:hover:text-primary-light transition-all"
+      >
+        Download Resume
+        <span
+          class="material-symbols-outlined text-xl transition-transform group-hover:translate-x-1"
+          >arrow_forward</span
+        >
+      </a>
+    </div>
+
+    <!-- Timeline Container -->
+    <div class="relative">
+      <!-- Vertical Line -->
+      <div
+        class="absolute left-8 lg:left-1/2 top-0 bottom-0 w-px bg-linear-to-b from-border-light via-border-light to-transparent dark:from-border-dark dark:via-border-dark lg:-ml-px"
+      ></div>
+
+      <div class="space-y-12">
+        @for (item of experience; track item.role) {
+          <div
+            data-aos="fade-up"
+            [attr.data-aos-delay]="200 + $index * 150"
+            class="experience-card relative lg:grid lg:grid-cols-2 lg:gap-16"
+          >
+            <!-- Icon (Center) -->
+            <div
+              class="absolute left-0 lg:left-1/2 top-0 size-16 rounded-full border-4 border-background-light dark:border-background-dark bg-white dark:bg-slate-800 flex items-center justify-center lg:-ml-8 z-10 shadow-lg"
+            >
+              <div
+                class="size-10 rounded-full bg-surface-highlight-light dark:bg-surface-highlight-dark flex items-center justify-center text-text-muted-light dark:text-text-muted-dark group-hover:text-primary transition-colors"
+                [ngClass]="{
+                  'bg-linear-to-tr from-primary to-accent text-white shadow-inner': item.isCurrent,
+                }"
+              >
+                <span class="material-symbols-outlined text-xl">{{ item.icon }}</span>
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div
+              class="pl-24 lg:pl-0 lg:pt-2"
+              [ngClass]="{
+                'lg:col-start-2': item.alignment === 'right',
+                'lg:col-start-1 lg:text-right lg:pr-0 lg:order-first': item.alignment === 'left',
+              }"
+            >
+              <div
+                class="card-base p-6 md:p-8 hover:shadow-xl hover:border-primary/30 dark:hover:border-primary/30 transition-all duration-300 group"
+              >
+                <div class="flex flex-col gap-4 mb-6">
+                  <div
+                    class="flex justify-between items-start"
+                    [ngClass]="{ 'lg:flex-row-reverse': item.alignment === 'left' }"
+                  >
+                    <div class="space-y-1">
+                      <div
+                        class="flex flex-wrap items-center gap-3"
+                        [ngClass]="{ 'lg:justify-end': item.alignment === 'left' }"
+                      >
+                        <h3
+                          class="text-2xl font-bold text-text-heading-light dark:text-text-heading-dark group-hover:text-primary transition-colors"
+                        >
+                          {{ item.role }}
+                        </h3>
+                        @if (item.isCurrent) {
+                          <span
+                            class="px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400 text-xs font-bold uppercase tracking-wide border border-emerald-100 dark:border-emerald-800"
+                          >
+                            Current
+                          </span>
+                        }
+                      </div>
+                      <div class="text-lg font-semibold text-primary">{{ item.company }}</div>
+                    </div>
+                    <div
+                      class="hidden sm:flex items-center gap-2 text-text-muted-light dark:text-text-muted-dark font-medium text-sm bg-surface-highlight-light dark:bg-surface-highlight-dark px-3 py-1.5 rounded-lg"
+                    >
+                      <span class="material-symbols-outlined text-lg">calendar_today</span>
+                      {{ item.period }}
+                    </div>
+                  </div>
+                </div>
+
+                <div class="space-y-4 mb-8">
+                  @for (desc of item.description; track desc) {
+                    <p
+                      class="text-text-body-light dark:text-text-body-dark leading-relaxed"
+                      [ngClass]="{ 'lg:ml-auto': item.alignment === 'left' }"
+                    >
+                      {{ desc }}
+                    </p>
+                  }
+                </div>
+
+                <div
+                  class="flex flex-wrap gap-2"
+                  [ngClass]="{ 'lg:justify-end': item.alignment === 'left' }"
+                >
+                  @for (tag of item.tags; track tag) {
+                    <span
+                      class="px-3 py-1.5 bg-surface-highlight-light dark:bg-surface-highlight-dark text-text-body-light dark:text-text-body-dark text-xs font-semibold rounded-lg border border-border-light dark:border-border-dark"
+                    >
+                      {{ tag }}
+                    </span>
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,148 @@
+<div
+  class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden pt-10 bg-background-light dark:bg-background-dark transition-colors duration-300"
+>
+  <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-24">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <!-- Left Column: Content -->
+      <div class="lg:col-span-6 flex flex-col gap-8 text-left">
+        <div class="space-y-4">
+          <!-- Badge -->
+          <div
+            data-aos="fade-up"
+            data-aos-delay="100"
+            class="hero-text inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark shadow-sm w-fit transition-colors duration-300"
+          >
+            <span class="relative flex h-2.5 w-2.5">
+              <span
+                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"
+              ></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+            </span>
+            <span
+              class="text-xs font-bold text-text-muted-light dark:text-text-muted-dark tracking-wider uppercase font-sans"
+              >Open to Work</span
+            >
+          </div>
+
+          <!-- Main Heading -->
+          <h1
+            data-aos="fade-up"
+            data-aos-delay="200"
+            class="hero-text text-4xl sm:text-5xl lg:text-7xl font-extrabold font-heading text-text-heading-light dark:text-text-heading-dark leading-tight tracking-tight mb-6 transition-colors duration-300"
+          >
+            Talk is cheap. <br />
+            Show me the <span class="gradient-text">code</span>.
+          </h1>
+          <p
+            data-aos="fade-up"
+            data-aos-delay="300"
+            class="hero-desc text-lg sm:text-xl text-text-body-light dark:text-text-body-dark leading-relaxed max-w-2xl mb-8 transition-colors duration-300"
+          >
+            I design and code beautifully simple things, <br class="hidden sm:block" />
+            and I love what I do.
+          </p>
+        </div>
+
+        <!-- Buttons -->
+        <div
+          data-aos="fade-up"
+          data-aos-delay="500"
+          class="hero-btn flex flex-col sm:flex-row gap-4 pt-4"
+        >
+          <button
+            routerLink="/projects"
+            class="inline-flex h-12 items-center justify-center rounded-lg bg-primary px-8 text-sm font-bold text-white shadow-lg shadow-primary/20 transition-all hover:bg-primary-dark hover:-translate-y-0.5 active:translate-y-0"
+          >
+            <span>View Projects</span>
+            <span class="material-symbols-outlined text-xl ml-2">arrow_forward</span>
+          </button>
+          <a
+            href="https://drive.google.com/file/d/1_MxMyGZSSBf-LtHYr1bDAdjGEpxCKv4J/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex h-12 items-center justify-center rounded-lg bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark px-6 text-sm font-bold text-text-body-light dark:text-text-heading-dark shadow-sm transition-all hover:bg-surface-highlight-light dark:hover:bg-surface-highlight-dark hover:-translate-y-0.5 active:translate-y-0"
+          >
+            <span class="material-symbols-outlined text-xl mr-2">download</span>
+            <span>Download Resume</span>
+          </a>
+        </div>
+
+        <!-- Tech Stack & Tools -->
+        <div data-aos="fade-up" data-aos-delay="700" class="tech-stack pt-8 sm:pt-12">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="h-px w-12 bg-border-light dark:bg-border-dark"></div>
+            <span
+              class="text-xs font-bold text-text-muted-light dark:text-text-muted-dark uppercase tracking-widest font-sans"
+              >Tech Stack & Tools</span
+            >
+            <div class="h-px flex-1 bg-border-light dark:bg-border-dark"></div>
+          </div>
+
+          <div
+            class="flex flex-wrap gap-4 grayscale-0 opacity-100 sm:grayscale sm:opacity-80 sm:hover:grayscale-0 sm:hover:opacity-100 transition-all duration-500"
+          >
+            @for (tech of techStack; track tech.name) {
+              <div
+                class="h-10 w-10 sm:h-12 sm:w-12 flex items-center justify-center rounded-xl bg-surface-light dark:bg-white/5 border border-border-light dark:border-white/10 shadow-sm"
+                [title]="tech.name"
+              >
+                <img
+                  class="h-5 w-5 sm:h-6 sm:w-6 object-contain"
+                  [src]="tech.icon"
+                  [alt]="tech.name"
+                />
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Image & Experience Card -->
+      <div class="lg:col-span-6 flex justify-center lg:justify-end" data-aos="fade-left">
+        <div class="relative w-full max-w-lg aspect-square">
+          <!-- Main Card Image -->
+          <div
+            class="w-full h-full rounded-4xl overflow-hidden border-8 border-surface-light dark:border-surface-dark shadow-2xl relative z-10 bg-surface-dark transition-colors duration-300"
+          >
+            <img
+              ngSrc="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop"
+              alt="Cyberpunk Digital Bg"
+              fill
+              priority
+              class="object-cover opacity-80 hover:scale-105 transition-transform duration-700"
+            />
+          </div>
+
+          <!-- Experience Badge Floating -->
+          <div
+            class="absolute bottom-12 -right-4 sm:-right-12 z-20 bg-surface-light dark:bg-surface-dark p-5 rounded-2xl shadow-xl border border-border-light dark:border-border-dark flex items-center gap-4 animate-[bounce_3s_infinite] transition-colors duration-300"
+          >
+            <div
+              class="h-12 w-12 rounded-lg bg-emerald-50 dark:bg-emerald-900/20 flex items-center justify-center text-emerald-500"
+            >
+              <span class="material-symbols-outlined text-3xl">code</span>
+            </div>
+            <div class="flex flex-col">
+              <span
+                class="text-xs font-bold text-text-muted-light dark:text-text-muted-dark uppercase tracking-wider"
+                >Experience</span
+              >
+              <span
+                class="text-xl font-bold text-text-heading-light dark:text-text-heading-dark text-nowrap"
+                >{{ experience }}</span
+              >
+            </div>
+          </div>
+
+          <!-- Decorative Elements Behind -->
+          <div
+            class="absolute -top-10 -right-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl -z-10"
+          ></div>
+          <div
+            class="absolute -bottom-10 -left-10 w-64 h-64 bg-accent/10 rounded-full blur-3xl -z-10"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,182 @@
+<div class="fixed top-6 left-0 right-0 z-50 flex justify-center px-6">
+  <!-- Floating Navbar Container -->
+  <header
+    class="w-full max-w-7xl bg-surface-light/90 dark:bg-surface-dark/90 backdrop-blur-xl rounded-full shadow-lg shadow-border-light/50 dark:shadow-black/50 border border-border-light dark:border-border-dark transition-all duration-300"
+  >
+    <div class="flex items-center justify-between pl-4 pr-2 py-2">
+      <!-- Logo Section -->
+      <a routerLink="/" class="flex items-center gap-3 group cursor-pointer">
+        <div
+          class="relative size-10 rounded-full bg-primary flex items-center justify-center text-white shadow-lg shadow-primary/30 group-hover:scale-105 transition-transform duration-300"
+        >
+          <span class="material-symbols-outlined text-2xl">code</span>
+        </div>
+        <div class="flex flex-col justify-center">
+          <h1
+            class="text-base font-bold font-heading text-text-heading-light dark:text-text-heading-dark leading-none mb-0.5"
+          >
+            Matin Imam
+          </h1>
+          <span
+            class="text-xs font-bold tracking-widest text-text-muted-light dark:text-text-muted-dark uppercase"
+            >Full Stack Dev</span
+          >
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a
+          routerLink="/about"
+          routerLinkActive="text-primary dark:text-primary-light font-bold"
+          class="text-sm font-semibold text-text-body-light dark:text-text-body-dark hover:text-primary dark:hover:text-primary-light transition-colors"
+          >About</a
+        >
+        <a
+          routerLink="/projects"
+          routerLinkActive="text-primary dark:text-primary-light font-bold"
+          class="text-sm font-semibold text-text-body-light dark:text-text-body-dark hover:text-primary dark:hover:text-primary-light transition-colors"
+          >Projects</a
+        >
+        <a
+          routerLink="/skills"
+          routerLinkActive="text-primary dark:text-primary-light font-bold"
+          class="text-sm font-semibold text-text-body-light dark:text-text-body-dark hover:text-primary dark:hover:text-primary-light transition-colors"
+          >Skills</a
+        >
+        <a
+          routerLink="/experience"
+          routerLinkActive="text-primary dark:text-primary-light font-bold"
+          class="text-sm font-semibold text-text-body-light dark:text-text-body-dark hover:text-primary dark:hover:text-primary-light transition-colors"
+          >Experience</a
+        >
+        <a
+          routerLink="/blog"
+          routerLinkActive="text-primary dark:text-primary-light font-bold"
+          class="text-sm font-semibold text-text-body-light dark:text-text-body-dark hover:text-primary dark:hover:text-primary-light transition-colors"
+          >Blog</a
+        >
+        <a
+          routerLink="/contact"
+          routerLinkActive="text-primary dark:text-primary-light font-bold"
+          class="text-sm font-semibold text-text-body-light dark:text-text-body-dark hover:text-primary dark:hover:text-primary-light transition-colors"
+          >Contact</a
+        >
+      </nav>
+
+      <!-- Right Actions -->
+      <div class="flex items-center gap-2 pl-2">
+        <!-- Divider (Desktop only) -->
+        <div class="hidden sm:block h-6 w-px bg-border-light dark:bg-border-dark mx-2"></div>
+
+        <!-- Theme Toggle -->
+        <button
+          (click)="toggleDarkMode()"
+          class="size-10 flex items-center justify-center rounded-full bg-surface-highlight-light dark:bg-surface-highlight-dark hover:bg-border-light dark:hover:bg-border-dark text-text-body-light dark:text-text-body-dark transition-colors focus:outline-none"
+        >
+          @if (!isDarkMode()) {
+            <span class="material-symbols-outlined text-xl">dark_mode</span>
+          }
+          @if (isDarkMode()) {
+            <span class="material-symbols-outlined text-xl">light_mode</span>
+          }
+        </button>
+
+        <!-- Resume Button (Desktop) -->
+        <a
+          href="https://drive.google.com/file/d/1_MxMyGZSSBf-LtHYr1bDAdjGEpxCKv4J/view?usp=sharing"
+          target="_blank"
+          class="hidden sm:flex items-center gap-2 px-6 py-2.5 bg-text-heading-light dark:bg-surface-light text-white dark:text-text-heading-light rounded-full text-sm font-bold shadow-lg shadow-slate-900/20 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 ml-2"
+        >
+          <span>Download Resume</span>
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button
+          (click)="toggleMobileMenu()"
+          class="md:hidden size-10 flex items-center justify-center rounded-full bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark shadow-sm hover:bg-surface-highlight-light dark:hover:bg-surface-highlight-dark transition-colors ml-2"
+        >
+          <span class="material-symbols-outlined text-text-body-light dark:text-text-body-dark"
+            >menu</span
+          >
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  @if (isMobileMenuOpen()) {
+    <div
+      class="md:hidden absolute top-20 inset-x-4 p-4 bg-surface-light/95 dark:bg-surface-dark/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-border-light dark:border-border-dark animate-in fade-in slide-in-from-top-2 origin-top z-40"
+    >
+      <nav class="flex flex-col gap-2">
+        <a
+          (click)="toggleMobileMenu()"
+          routerLink="/about"
+          routerLinkActive="bg-surface-highlight-light text-primary dark:bg-surface-highlight-dark dark:text-primary-light"
+          class="flex items-center gap-3 px-4 py-3 rounded-xl text-text-body-light dark:text-text-body-dark font-bold hover:bg-surface-highlight-light dark:hover:bg-surface-highlight-dark transition-colors"
+        >
+          <span class="material-symbols-outlined text-xl">person</span>
+          About
+        </a>
+        <a
+          (click)="toggleMobileMenu()"
+          routerLink="/projects"
+          routerLinkActive="bg-surface-highlight-light text-primary dark:bg-surface-highlight-dark dark:text-primary-light"
+          class="flex items-center gap-3 px-4 py-3 rounded-xl text-text-body-light dark:text-text-body-dark font-bold hover:bg-surface-highlight-light dark:hover:bg-surface-highlight-dark transition-colors"
+        >
+          <span class="material-symbols-outlined text-xl">grid_view</span>
+          Projects
+        </a>
+        <a
+          (click)="toggleMobileMenu()"
+          routerLink="/skills"
+          routerLinkActive="bg-surface-highlight-light text-primary dark:bg-surface-highlight-dark dark:text-primary-light"
+          class="flex items-center gap-3 px-4 py-3 rounded-xl text-text-body-light dark:text-text-body-dark font-bold hover:bg-surface-highlight-light dark:hover:bg-surface-highlight-dark transition-colors"
+        >
+          <span class="material-symbols-outlined text-xl">code</span>
+          Skills
+        </a>
+        <a
+          (click)="toggleMobileMenu()"
+          routerLink="/experience"
+          routerLinkActive="bg-surface-highlight-light text-primary dark:bg-surface-highlight-dark dark:text-primary-light"
+          class="flex items-center gap-3 px-4 py-3 rounded-xl text-text-body-light dark:text-text-body-dark font-bold hover:bg-surface-highlight-light dark:hover:bg-surface-highlight-dark transition-colors"
+        >
+          <span class="material-symbols-outlined text-xl">work</span>
+          Experience
+        </a>
+        <a
+          (click)="toggleMobileMenu()"
+          routerLink="/blog"
+          routerLinkActive="bg-surface-highlight-light text-primary dark:bg-surface-highlight-dark dark:text-primary-light"
+          class="flex items-center gap-3 px-4 py-3 rounded-xl text-text-body-light dark:text-text-body-dark font-bold hover:bg-surface-highlight-light dark:hover:bg-surface-highlight-dark transition-colors"
+        >
+          <span class="material-symbols-outlined text-xl">rss_feed</span>
+          Blog
+        </a>
+        <a
+          (click)="toggleMobileMenu()"
+          routerLink="/contact"
+          routerLinkActive="bg-surface-highlight-light text-primary dark:bg-surface-highlight-dark dark:text-primary-light"
+          class="flex items-center gap-3 px-4 py-3 rounded-xl text-text-body-light dark:text-text-body-dark font-bold hover:bg-surface-highlight-light dark:hover:bg-surface-highlight-dark transition-colors"
+        >
+          <span class="material-symbols-outlined text-xl">mail</span>
+          Contact
+        </a>
+
+        <div class="h-px bg-border-light dark:bg-border-dark my-2"></div>
+
+        <a
+          (click)="toggleMobileMenu()"
+          href="https://drive.google.com/file/d/1_MxMyGZSSBf-LtHYr1bDAdjGEpxCKv4J/view?usp=sharing"
+          target="_blank"
+          class="flex items-center justify-center gap-2 px-4 py-3 bg-text-heading-light dark:bg-surface-light text-white dark:text-text-heading-light rounded-xl font-bold shadow-md active:scale-95 transition-all"
+        >
+          <span>Download Resume</span>
+          <span class="material-symbols-outlined text-lg">download</span>
+        </a>
+      </nav>
+    </div>
+  }
+</div>
