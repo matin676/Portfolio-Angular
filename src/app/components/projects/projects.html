@@ -32,23 +32,27 @@
                 <span class="material-symbols-outlined text-2xl">{{ project.icon }}</span>
               </div>
               <div class="flex items-center gap-3">
-                <a
-                  [href]="project.links.github"
-                  target="_blank"
-                  class="size-10 rounded-full bg-surface-light dark:bg-surface-dark flex items-center justify-center text-text-muted-light dark:text-text-muted-dark hover:text-primary hover:scale-110 transition-all border border-border-light dark:border-border-dark"
-                  title="View Code"
-                >
-                  <span class="material-symbols-outlined text-xl">code</span>
-                </a>
-                <a
-                  [href]="project.links.demo"
-                  target="_blank"
-                  class="size-10 rounded-full flex items-center justify-center text-white hover:scale-110 transition-all shadow-lg"
-                  [class]="project.style.buttonBg"
-                  title="Live Demo"
-                >
-                  <span class="material-symbols-outlined text-xl">open_in_new</span>
-                </a>
+                @if (project.links.github) {
+                  <a
+                    [href]="project.links.github"
+                    target="_blank"
+                    class="size-10 rounded-full bg-surface-light dark:bg-surface-dark flex items-center justify-center text-text-muted-light dark:text-text-muted-dark hover:text-primary hover:scale-110 transition-all border border-border-light dark:border-border-dark"
+                    title="View Code"
+                  >
+                    <span class="material-symbols-outlined text-xl">code</span>
+                  </a>
+                }
+                @if (project.links.demo) {
+                  <a
+                    [href]="project.links.demo"
+                    target="_blank"
+                    class="size-10 rounded-full flex items-center justify-center text-white hover:scale-110 transition-all shadow-lg"
+                    [class]="project.style.buttonBg"
+                    title="Live Demo"
+                  >
+                    <span class="material-symbols-outlined text-xl">open_in_new</span>
+                  </a>
+                }
               </div>
             </div>
 

@@ -119,7 +119,7 @@ export const SKILLS: SkillCategory[] = [
         percentage: 75,
         description: 'Flexible NoSQL document database.',
         icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
-      }
+      },
     ],
   },
   {
@@ -196,6 +196,22 @@ export const PROJECTS: Project[] = [
       buttonBg: 'bg-emerald-600 hover:bg-emerald-700 shadow-emerald-600/25',
       titleHover: 'group-hover:text-emerald-600 dark:group-hover:text-emerald-400',
       text: 'text-emerald-600 dark:text-emerald-400',
+    },
+  },
+  {
+    title: 'Employee Management System',
+    description:
+      'A comprehensive enterprise solution for managing organizational workflows, including employee records, attendance, and payroll. Features robust role-based access control and data isolation for secure management.',
+    tags: ['NextJs', 'Prisma', 'MySQL', 'TypeScript'],
+    icon: 'admin_panel_settings',
+    links: {
+      github: 'https://github.com/matin676/Employee_managment_system',
+    },
+    style: {
+      iconBg: 'bg-gradient-to-br from-orange-600 to-orange-400 shadow-orange-500/25',
+      buttonBg: 'bg-orange-600 hover:bg-orange-700 shadow-orange-600/25',
+      titleHover: 'group-hover:text-orange-600 dark:group-hover:text-orange-400',
+      text: 'text-orange-600 dark:text-orange-400',
     },
   },
 ];

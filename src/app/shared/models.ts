@@ -26,8 +26,8 @@ export interface Project {
   tags: string[];
   icon: string;
   links: {
-    github: string;
-    demo: string;
+    github?: string;
+    demo?: string;
   };
   style: {
     iconBg: string; // e.g. "bg-gradient-to-br from-blue-600 to-blue-400 shadow-blue-500/25"
