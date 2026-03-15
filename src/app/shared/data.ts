@@ -202,7 +202,7 @@ export const PROJECTS: Project[] = [
     title: 'Employee Management System',
     description:
       'A comprehensive enterprise solution for managing organizational workflows, including employee records, attendance, and payroll. Features robust role-based access control and data isolation for secure management.',
-    tags: ['NextJs', 'Prisma', 'MySQL', 'TypeScript'],
+    tags: ['Angular', 'Spring Boot', 'PostgreSQL', 'TypeScript'],
     icon: 'admin_panel_settings',
     links: {
       github: 'https://github.com/matin676/Employee_managment_system',
