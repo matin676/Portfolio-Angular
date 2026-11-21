@@ -21,8 +21,8 @@ export const TECH_STACK: TechStackItem[] = [
     name: 'Node.js',
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
   },
-  { name: 'Git', icon: 'https://api.iconify.design/logos:git-icon.svg' },
-  { name: 'PostgreSQL', icon: 'https://api.iconify.design/logos:postgresql.svg' },
+  { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg' },
+  { name: 'PostgreSQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg' },
 ];
 
 export const SKILLS: SkillCategory[] = [
